@@ -20,7 +20,7 @@ def login(request):
     }
 
     data = {
-        "response": "Success"
+        "response": "Successfull"
     }
 
     return Response(data)

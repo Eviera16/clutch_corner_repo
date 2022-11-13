@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/main1.css' %}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'javascript/main.js' %}"></script>
+    <script type="text/javascript">
+
+        function getToken(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(
+                            name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getToken('csrftoken')
+    </script>
+
+
+</head>
+
+<body style="display: flex; flex-direction: column; align-items: center; width:100%">
+
+    <div class="navBarDiv">
+        {% if logged != Nothing %}
+        <ul class="navItemList">
+            <li>
+                <a class="navLink" href="/gallery">Gallery</a>
+            </li>
+            <li class="navItem">
+                <a class="navLink" href="/imageInfo/1">Gadgets</a>
+            </li>
+        </ul>
+        {% endif %}
+        {% if logged != Nothing %}
+        <a href="/index"><img src="{% static 'images/IMG_1276.JPG' %}" class="centerHead"></a>
+        {% endif %}
+        {% if logged == Nothing %}
+        <img src="{% static 'images/IMG_1276.JPG' %}" class="centerHead">
+        {% endif %}
+        {% if logged != Nothing %}
+        <ul class="navItemList">
+            <li class="navItem">
+                <a class="navLink" href="/contact">Contactsss</a>
+            </li>
+            <li class="navItem">
+                <a class="navLink" href="/FAQ">FAQ</a>
+            </li>
+            {% if logged == admin %}
+            <li class="navItem">
+                <a href="/editItem/1" class="navLink">Edit Item</a>
+            </li>
+            <li class="navItem">
+                <a href="/addGallery" class="navLink">Add Gallery</a>
+            </li>
+            {% endif %}
+        </ul>
+        {% endif %}
+    </div>
+
+    <div class="container">
+        {% block content %}]
+
+        {% endblock content %}
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+
+</html>
+
+
+<!-- <div class="container-fluid width-full m-0 p-0">
+    <nav id="navbarhere" class="navbar navbar-expand-lg navbar-dark bg-dark p-0">
+        <div class="container-fluid navCont p-0">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                {% if logged != Nothing %}
+                <ul class="navbar-nav mb-2 mb-lg-0" id="navItems-list">
+                    <li class="navItem">
+                        <a class="nav-link active" id="id1" aria-current="page" href="/gallery">Gallery</a>
+                    </li>
+                    <li class="navItem">
+                        <a class="nav-link active" aria-current="page" href="/imageInfo/1">Gadgets</a>
+                    </li>
+                </ul>
+                {% endif %}
+                {% if logged != Nothing %}
+                <a class="navbar-brand m-0" href="/index"><img src="{% static 'images/IMG_1276.JPG' %}"
+                        class="centerHead"></a>
+                {% endif %}
+                {% if logged == Nothing %}
+                <img src="{% static 'images/IMG_1276.JPG' %}" class="centerHead">
+                {% endif %}
+                {% if logged != Nothing %}
+                <ul class="navbar-nav mb-2 mb-lg-0" id="navItems-list">
+                    <li class="navItem">
+                        <a class="nav-link active" aria-current="page" href="/contact">Contact</a>
+                    </li>
+                    <li class="navItem">
+                        <a class="nav-link active" aria-current="page" href="/FAQ">FAQ</a>
+                    </li>
+                    {% if logged == admin %}
+                    <li class="navItem">
+                        <a href="/editItem/1" class="nav-link active" aria-current="page">Edit Item</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="/addGallery" class="nav-link active" aria-current="page">Add Gallery</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                {% endif %}
+
+            </div>
+        </div>
+    </nav>
+</div> -->

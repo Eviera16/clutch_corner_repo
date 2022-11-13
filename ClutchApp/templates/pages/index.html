@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'main.html' %}
+<html>
+
+<head>
+    {% load static %}
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/index1.css' %}">
+    <script type="text/javascript" src="{% static 'javascript/index.js' %}"></script>
+</head>
+
+<body>
+    <div>
+        {% for pic in allImages %}
+        <div class="feed-snap">
+            <img class="picture" src="{{ pic.image.url }}" />
+            <p class="lorem">Hello Hello Hello ipsum dolor sit amet consectetur adipisicing elit. Rem
+                sunt, ratione
+                ullam
+                nesciunt harum aliquid a suscipit aperiam aliquam sapiente eveniet fugit, animi provident alias
+                magni, accusamus cupiditate quo magnam?</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+{% endblock content %}
+
+</html>

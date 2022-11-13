@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+    </head>
+    <body>
+        <img id="title" src="{% static 'images/IMG_1276.JPG' %}" class="centerHead">
+        <div id="wrapper">
+            <div class="Email">
+                <p class="emailDesc">Subscribe now or regret later.</p>
+                <form action="/emailList" method="post">
+                    {% csrf_token %}
+                    <input name="email" type="email" placeholder="Email@placeHolder.com">
+                    <input type="submit" value="submit">
+                </form>
+                {% if emailAdded %}
+                <p>{{emailAdded}}</p>
+                {% endif %}
+            </div>
+            <div id="login">
+                <h1>Login</h1>
+                <form class="form2" action="loginuser" method="post">
+                    {% csrf_token %}
+                    <div class="labelWrap">
+                        <label for="password">Password: </label>
+                        <input name="password" type="text">
+                    </div>
+                    <button type="submit">Login!</button>
+    
+                </form>
+            </div>
+            <div id="errors">
+                {% if messages %}
+                <ul class="errorsList">
+                    {% for message in messages %}
+                    <li class="errMess">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>

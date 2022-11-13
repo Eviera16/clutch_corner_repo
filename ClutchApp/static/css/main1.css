@@ -1,0 +1,23 @@
+.navBarDiv {
+    background-image: url("https://media3.giphy.com/media/smzfl3E7a4iHK/giphy.gif");
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: -10px;
+    margin-left: -30px;
+}
+
+.navLink {
+    color: white;
+    text-decoration: none;
+}
+
+.navItem {
+    text-decoration: none;
+}
+
+.navItemList {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,61 @@
+body{
+    background-image: url("https://media3.giphy.com/media/smzfl3E7a4iHK/giphy.gif");
+}
+#login{
+    height: fit-content;
+    width: fit-content;
+    margin-left: 200px;
+    /* margin-top: 20px; */
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    display: flex;
+    padding: 20px;
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+.emailDesc{
+    color: white;
+}
+#wrapper{
+    display: flex;
+    width: fit-content;
+    /* border: 3px solid blue; */
+    /* height: 500px; */
+    display: flex;
+    /* justify-content: space-between; */
+    margin-left: 300px;
+}
+.Email{
+    height: 200px;
+    width: 400px;
+    background-color: black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.errMess{
+    color:red;
+}
+#title{
+    height: 120px;
+    width: 800px;
+    margin-left: 300px;
+    margin-top: 160px;
+}
+#errors{
+    margin-left: 500px;
+}
+
+.form2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.labelWrap{
+    margin-top: 15px;
+}

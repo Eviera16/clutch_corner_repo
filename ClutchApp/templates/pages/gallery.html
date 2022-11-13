@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+{% extends 'main.html' %}
+<html>
+
+<head>
+    {% load static %}
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'javascript/gallery.js' %}"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="row">
+            {% for box in gIMD %}
+            {% if box.image > 23 %}
+            {% if box.image < 27 %} 
+            {% for pic in gImages %} 
+            {% if box.image == pic.id %} 
+            <a class="box" href="/gallery/{{box.id}}"><div class="hiddenInfo"></div><strong class="strong">{{box.description}}</strong><img src="{{ pic.image.url }}" class="box"></a>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for box in gIMD %}
+            {% if box.image > 20 %}
+            {% if box.image < 24 %} 
+            {% for pic in gImages %} 
+            {% if box.image == pic.id %} 
+            <a class="box" href="/gallery/{{box.id}}"><div class="hiddenInfo"></div><strong class="strong">{{box.description}}</strong><img src="{{ pic.image.url }}" class="box"></a>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for box in gIMD %}
+            {% if box.image > 17 %}
+            {% if box.image < 21 %} 
+            {% for pic in gImages %} 
+            {% if box.image == pic.id %} 
+            <a class="box" href="/gallery/{{box.id}}"><div class="hiddenInfo"></div><strong class="strong">{{box.description}}</strong><img src="{{ pic.image.url }}" class="box"></a>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for box in gIMD %}
+            {% if box.image > 14 %}
+            {% if box.image < 18 %} 
+            {% for pic in gImages %} 
+            {% if box.image == pic.id %} 
+            <a class="box" href="/gallery/{{box.id}}"><div class="hiddenInfo"></div><strong class="strong">{{box.description}}</strong><img src="{{ pic.image.url }}" class="box"></a>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for box in gIMD %}
+            {% if box.image > 11 %}
+            {% if box.image < 15 %} 
+            {% for pic in gImages %} 
+            {% if box.image == pic.id %} 
+            <a class="box" href="/gallery/{{box.id}}"><div class="hiddenInfo"></div><strong class="strong">{{box.description}}</strong><img src="{{ pic.image.url }}" class="box"></a>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for box in gIMD %}
+            {% if box.image > 8 %}
+            {% if box.image < 12 %} 
+            {% for pic in gImages %} 
+            {% if box.image == pic.id %} 
+            <a class="box" href="/gallery/{{box.id}}"><div class="hiddenInfo"></div><strong class="strong">{{box.description}}</strong><img src="{{ pic.image.url }}" class="box"></a>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for box in gIMD %}
+            {% if box.image > 5 %}
+            {% if box.image < 9 %} 
+            {% for pic in gImages %} 
+            {% if box.image == pic.id %} 
+            <a class="box" href="/gallery/{{box.id}}"><div class="hiddenInfo"></div><strong class="strong">{{box.description}}</strong><img src="{{ pic.image.url }}" class="box"></a>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for box in gIMD %}
+            {% if box.image > 2 %}
+            {% if box.image < 6 %} 
+            {% for pic in gImages %} 
+            {% if box.image == pic.id %} 
+            <a class="box" href="/gallery/{{box.id}}"><div class="hiddenInfo"></div><strong class="strong">{{box.description}}</strong><img src="{{ pic.image.url }}" class="box"></a>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for box in gIMD %}
+            {% if box.image < 3 %} 
+            {% for pic in gImages %} 
+            {% if box.image == pic.id %} 
+            <a class="box" href="/gallery/{{box.id}}"><div class="hiddenInfo"></div><strong class="strong">{{box.description}}</strong><img src="{{ pic.image.url }}" class="box"></a>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+{% endblock content %}
+
+</html>

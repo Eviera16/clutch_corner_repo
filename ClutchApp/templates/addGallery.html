@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends 'main.html' %}
+<html>
+
+<head>
+    {% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/addGallery.css' %}">
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <form class="IUForm" action="addGallery" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="labels">
+                <label for="description">Description: </label>
+                <input type="text" name="description">
+            </div>
+            <div class="imageUploadDiv">
+                <div class="imageUpload">
+                    {{ form.as_p }}
+                </div>
+            </div>
+            <button class="submit" type="submit">Submit</button>
+        </form>
+
+    </div>
+</body>
+{% endblock content %}
+
+</html>

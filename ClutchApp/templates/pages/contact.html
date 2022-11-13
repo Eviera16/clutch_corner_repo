@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends 'main.html' %}
+<html>
+
+<head>
+    {% load static %}
+    {% block content %}
+
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+</head>
+
+<body>
+    <!-- <div id="header">
+        <div class="leftHead">
+            <a href="/gallery" class="link">Gallery</a>
+            <a href="" class="link">Courses</a>
+        </div>
+        <div class="border">
+            <a href="/index"><img src="{% static 'images/IMG_1276.JPG' %}" class="centerHead"></a>
+        </div>
+        <div class="rightHead">
+            <a href="" class="link">Gadgets</a>
+            <a href="/contact" class="link">Contact</a>
+            <a href="/FAQ" class="link">FAQ</a>
+        </div>
+    </div> -->
+    <h1 id="title">
+        Need Help with anything or want more information on our products? Contact us here!
+    </h1>
+
+    <div class="cInfo">
+        <ul>
+            <li>
+        <h3 class="info">Call: 555-555-5555</h3>
+            </li>
+            <li>
+        <h3 class="info">Email: thisEmail@gmail.com</h3>
+            </li>
+        </ul>
+    </div>
+</body>
+{% endblock content %}
+
+
+</html>

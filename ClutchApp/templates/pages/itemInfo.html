@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% extends 'main.html' %}
+<html>
+    <head>
+        {% load static %}
+        {% block content %}
+        <link rel="stylesheet" href="{% static 'css/itemInfo.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="{% static 'javascript/itemInfo.js' %}"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="hiddenInfo">
+                <p class="INLen">{{imgNumslen}}</p>
+                <p class="INArr">{{imgNumArr}}</p>
+            </div>
+            <div class="outer">
+                <h1 class="arrow_left">&#8592;</h1>
+                <div class="inWrapper">
+                    <div class="inner">
+                        {% for num in item.imgNums %}
+                        {% for pic in allPics %}
+                        {% if num == pic.id %}
+                        <!-- <p id="{{pic.id}}">Hi there</p> -->
+                        <img class="image" id="{{ pic.id }}" src="{{ pic.image.url }}">
+                        {% endif %}
+                        {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- <div class="extra"></div> -->
+                <h1 class="arrow_right">&#8594;</h1>
+            </div>
+            <div class="info">
+                <h1 class="title">{{item.title}}</h1>
+                <h4 class="description">{{item.description}}</h4>
+                <form action="/checkout" method="post">
+                    {% csrf_token %}
+                    <div class="quantity">
+
+                        <h4 name="quantity">Quantity: </h4>
+                        <input class="quantInput" placeholder="1" type="number" min="1" name="quantity">
+                    </div>
+                    <h4 class="price">${{item.price|floatformat:2}}</h4>
+                    <button type="submit" class="btn btn-success add-btn">Buy {{item.title}}</button>
+                </form>
+            </div>
+        </div>
+    </body>
+    {% endblock content %}
+</html>

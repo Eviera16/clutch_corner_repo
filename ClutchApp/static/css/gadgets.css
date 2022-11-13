@@ -1,0 +1,29 @@
+body{
+    background-image: url('https://i.pinimg.com/originals/bb/ac/25/bbac2551457785bd9af3e19c1c3ce0d8.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 3px solid white; */
+}
+.top{
+    display: flex;
+    justify-content: space-around;
+    /* border: 3px solid white; */
+    width: 800px;
+    margin-left: -500px;
+}
+#title{
+    color: white;
+}
+.link-wrap{
+    text-decoration: none;
+}
+.arrow-left{
+    color: white;
+    height: 50px;
+    /* border: 1px solid black; */
+}

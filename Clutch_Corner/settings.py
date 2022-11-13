@@ -101,7 +101,7 @@ DATABASES = {
 # CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
-    "https://clutch-corner-dev.herokuapp.com",
+    "http://localhost:3000",
 ]
 
 

@@ -10,17 +10,20 @@ from django.http import JsonResponse
 import json
 import datetime 
 
-@api_view(['GET'])
+@api_view(['POST'])
 def login(request):
-    request.session['loginID'] = "Nothing"
-    logged = request.session['loginID']
+    # request.session['loginID'] = "Nothing"
+    # logged = request.session['loginID']
 
-    context = {
-        "logged" : logged
-    }
+    # context = {
+    #     "logged" : logged
+    # }
+
+    password = request.data['password']
 
     data = {
-        "response": "Successfull"
+        "response": "Successfull",
+        "password": password
     }
 
     return Response(data)
